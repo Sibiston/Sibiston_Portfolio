@@ -1,0 +1,1986 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sibiston - Personal Portfolio</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="https://themewagon.github.io/proman/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .modal-overlay {
+          display: none;
+          position: fixed;
+          top: 0; left: 0;
+          width: 100vw; height: 100vh;
+          background-color: rgba(0, 0, 0, 0.7);
+          z-index: 9999;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        .modal-content {
+          background: #fff;
+          max-width: 800px;
+          width: 90%;
+          max-height: 90vh;
+          overflow-y: auto;
+          padding: 30px;
+          border-radius: 16px;
+          position: relative;
+          font-family: 'Segoe UI', sans-serif;
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .modal-content h2, .modal-content h3 {
+          margin-top: 0;
+        }
+        
+        .modal-content ul {
+          padding-left: 1.5rem;
+          list-style-type: disc;
+        }
+        
+        .close-btn {
+          position: absolute;
+          top: 10px; right: 15px;
+          background: transparent;
+          border: none;
+          font-size: 24px;
+          cursor: pointer;
+          color: #333;
+          transition: color 0.2s ease;
+        }
+        .close-btn:hover {
+          color: red;
+        }
+        </style>
+
+        <style>
+            /* Portfolio Container */
+            .portfolio-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1.5rem;
+                justify-content: flex-start;
+                transition: all 0.3s ease;
+                min-height: 300px;
+            }
+
+            .portfolio-item {
+                opacity: 1;
+                transform: scale(1);
+                transition: all 0.3s ease;
+                width: calc(33.333% - 1rem);
+                position: relative;
+            }
+
+            .portfolio-item.hidden {
+                display: none;
+            }
+
+            @media (max-width: 991px) {
+                .portfolio-item {
+                    width: calc(50% - 1rem);
+                }
+            }
+
+            @media (max-width: 576px) {
+                .portfolio-item {
+                    width: 100%;
+                }
+            }
+            // ... existing portfolio card styles ...
+        </style>
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top shadow py-lg-0 px-4 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+        <a href="index.html" class="navbar-brand d-block d-lg-none">
+            <h1 class="text-primary fw-bold m-0">Sibiston Basumatary</h1>
+        </a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between py-4 py-lg-0" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="index.html#home" class="nav-item nav-link active">Home</a>
+                <a href="index.html#about" class="nav-item nav-link">About</a>
+                <a href="index.html#skill" class="nav-item nav-link">Skills</a>
+                <a href="index.html#service" class="nav-item nav-link">Services</a>
+            </div>
+            <a href="index.html" class="navbar-brand bg-secondary py-3 px-4 mx-3 d-none d-lg-block">
+                <h1 class="text-primary fw-bold m-0">Sibiston</h1>
+            </a>
+            <div class="navbar-nav me-auto py-0">
+                <a href="index.html#achievements" class="nav-item nav-link">Achievements</a>
+                <a href="index.html#testimonial" class="nav-item nav-link">Testimonial</a>
+                <a href="index.html#contact" class="nav-item nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-light my-6 mt-0" id="home">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 py-6 pb-0 pt-lg-0">
+                    <h3 class="text-primary mb-3">I'm</h3>
+                    <h1 class="display-3 mb-3">Sibiston Basumatary</h1>
+                    <h2 class="typed-text-output d-inline"></h2>
+                    <div class="typed-text d-none">Web Designer, Web Developer, Front End Developer, Ai Developer, Apps Developer</div>
+                    <div class="d-flex align-items-center pt-5">
+                        <a href="index.html" class="btn btn-primary py-3 px-4 me-5">Download CV</a>
+                        <button type="button" class="btn-play" data-bs-toggle="modal"
+                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
+                            <span></span>
+                        </button>
+                        <h5 class="ms-4 mb-0 d-none d-sm-block">Play Video</h5>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-fluid" src="img/profile-1.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- Video Modal Start -->
+    <div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Youtube Video</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- 16:9 aspect ratio -->
+                    <div class="ratio ratio-16x9">
+                        <iframe class="embed-responsive-item" src="index.html" id="video" allowfullscreen allowscriptaccess="always"
+                            allow="autoplay"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Video Modal End -->
+
+
+   <!-- About Start -->
+    <div class="container-xxl py-6" id="about">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="d-flex align-items-center mb-5">
+                        <div class="years flex-shrink-0 text-center me-4">
+                            <h1 class="display-1 mb-0">15</h1>
+                            <h5 class="mb-0">Plus</h5>
+                        </div>
+                        <h3 class="lh-base mb-0">🚀Real-Time Projects | AI Trainer @ Outlier (Ongoing) | Android
+                            Developer Internship @ Pinnacle Labs </h3>
+                    </div>
+                    <p class="mb-4">
+                        I'm currently working as an AI Trainer at Outlier, where I contribute to various AI training
+                        projects and fine-tune machine learning models for real-world applications. Previously, I
+                        completed an internship at Pinnacle Labs, where I focused on designing intuitive Android UIs and
+                        integrating APIs to enhance mobile app functionality.
+                    </p>
+                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>💡 Fine-tuned AI models using
+                        PyTorch and worked on LLM apps with LangChain at Outlier.</p>
+                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>📱 Built responsive Android UIs
+                        and integrated APIs using MVVM architecture at Pinnacle Labs.</p>
+                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>🚀 Gained hands-on experience
+                        with AI training pipelines, prompt engineering, and mobile app development.</p>
+                    <a class="btn btn-primary py-3 px-5 mt-3" id="readMoreBtn">Read More</a>
+
+                    <!-- Modal Overlay -->
+                    <div id="popupModal" class="modal-overlay">
+                        <div class="modal-content">
+                            <button class="close-btn" id="closeModal">&times;</button>
+                            <h2>Professional Work Experience</h2>
+
+                            <h3>🔬 Outlier - AI Trainer</h3>
+                            <ul>
+                                <li><strong>Red Wizards Math Prompt Dimensions Module:</strong> Discusses math prompt
+                                    complexity and how to increase model failure. <em>Completed: March 17th, 2025</em>
+                                </li>
+                                <li><strong>Kepler - Mistakes to Avoid:</strong> A short recap on common mistakes in
+                                    prompt queues with video and sections. <em>Completed: March 16th, 2025</em></li>
+                                <li><strong>Psychic Prompt Quiz RLHF:</strong> Interactive quiz to refine prompt-writing
+                                    with best practices. <em>Completed: March 16th, 2025</em></li>
+                            </ul>
+
+                            <h3>📱 Pinnacle Labs - Android Developer Intern</h3>
+                            <p><strong>WeatherWise - Your Personalized Weather Companion 🌦️</strong></p>
+                            <ul>
+                                <li><strong>Search by City or Location</strong> – Real-time weather fetching using
+                                    OpenWeatherMap API</li>
+                                <li><strong>Bookmark Locations</strong> – Quick access to favorite cities</li>
+                                <li><strong>5-Day Forecast & Today's Forecast</strong> – Detailed and real-time updates
+                                </li>
+                                <li><strong>Profile Management</strong> – Editable user profile with photo support</li>
+                            </ul>
+                            <p><strong>🛠️ Tech Stack:</strong></p>
+                            <ul>
+                                <li><strong>Architecture:</strong> MVVM, Data Binding, LiveData</li>
+                                <li><strong>Networking:</strong> Retrofit, OkHttp, Gson</li>
+                                <li><strong>UI Enhancements:</strong> Glide, Chip Navigation Bar, BlurView</li>
+                                <li><strong>Location:</strong> Google Play Services</li>
+                                <li><strong>Dependencies:</strong> Jetpack components, Material Design, Kotlin Kapt &
+                                    Parcelize</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    </style>
+
+                    <!-- JavaScript -->
+                    <script>
+                        document.getElementById("readMoreBtn").onclick = function () {
+                            document.getElementById("popupModal").style.display = "flex";
+                        };
+                        document.getElementById("closeModal").onclick = function () {
+                            document.getElementById("popupModal").style.display = "none";
+                        };
+                    </script>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="row g-3 mb-4 align-items-stretch">
+                        <!-- Left Column with one image -->
+                        <div class="col-sm-6 d-flex">
+                            <img class="img-fluid rounded w-100" src="img/sih.jpg" alt="">
+                        </div>
+                    
+                        <!-- Right Column with two stacked images -->
+                        <div class="col-sm-6 d-flex flex-column justify-content-between">
+                            <div class="mb-3">
+                                <img class="img-fluid rounded w-100" src="img/sih2.jpg" alt="">
+                            </div>
+                            <div>
+                                <img class="img-fluid rounded w-100" src="img/sih1.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex align-items-center mb-3">
+                        <h5 class="border-end pe-3 me-3 mb-0">Interships</h5>
+                        <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">2</h2>
+                    </div>
+            
+                    <div class="d-flex align-items-center mb-3">
+                        <h5 class="border-end pe-3 me-3 mb-0">Projects Completed</h5>
+                        <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">20</h2>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+
+    <!-- Expertise Start -->
+
+    
+    <div class="container-xxl py-6 pb-5" id="skill">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="display-5 mb-5">Skills & Experience</h1>
+                    <p class="mb-4">I bring a diverse set of technical skills and professional experience to every project. My expertise spans across multiple domains of web development and design.</p>
+                    <h3 class="mb-4">My Skills</h3>
+                    
+                    <!-- Skills Slider Start -->
+                    <div class="skills-slider">
+                        <div class="skills-category active" data-category="web">
+                            <h4 class="category-title mb-4">
+                                <i class="fas fa-code me-2"></i>Web Development
+                            </h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="skill-card mb-4" data-skill="92">
+                                        <div class="skill-header d-flex justify-content-between align-items-center">
+                                            <h6 class="font-weight-bold mb-0">HTML</h6>
+                                            <span class="skill-percentage">0%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="skill-description mt-2">
+                                            <small class="text-muted">Advanced HTML5, Markup</small>
+                                        </div>
+                                    </div>
+                                    <div class="skill-card mb-4" data-skill="88">
+                                        <div class="skill-header d-flex justify-content-between align-items-center">
+                                            <h6 class="font-weight-bold mb-0">CSS</h6>
+                                            <span class="skill-percentage">0%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="skill-description mt-2">
+                                            <small class="text-muted">CSS3, Flexbox, Grid, Animations</small>
+                                        </div>
+                                    </div>
+                                    <div class="skill-card mb-4" data-skill="85">
+                                        <div class="skill-header d-flex justify-content-between align-items-center">
+                                            <h6 class="font-weight-bold mb-0">PHP</h6>
+                                            <span class="skill-percentage">0%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="skill-description mt-2">
+                                            <small class="text-muted">Backend Development, API Integration</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="skill-card mb-4" data-skill="90">
+                                        <div class="skill-header d-flex justify-content-between align-items-center">
+                                            <h6 class="font-weight-bold mb-0">JavaScript</h6>
+                                            <span class="skill-percentage">0%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-info" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="skill-description mt-2">
+                                            <small class="text-muted">ES6+, DOM Manipulation, AJAX</small>
+                                        </div>
+                                    </div>
+                                    <div class="skill-card mb-4" data-skill="87">
+                                        <div class="skill-header d-flex justify-content-between align-items-center">
+                                            <h6 class="font-weight-bold mb-0">React</h6>
+                                            <span class="skill-percentage">0%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="skill-description mt-2">
+                                            <small class="text-muted">Component Architecture, Hooks</small>
+                                        </div>
+                                    </div>
+                                    <div class="skill-card mb-4" data-skill="83">
+                                        <div class="skill-header d-flex justify-content-between align-items-center">
+                                            <h6 class="font-weight-bold mb-0">Node.js</h6>
+                                            <span class="skill-percentage">0%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="skill-description mt-2">
+                                            <small class="text-muted">Server-side Development, Express</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skills-category" data-category="android">
+                            <h4 class="category-title mb-4">
+                                <i class="fab fa-android me-2"></i>Android Development
+                            </h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="skill-card mb-4" data-skill="91">
+                                        <div class="skill-header d-flex justify-content-between align-items-center">
+                                            <h6 class="font-weight-bold mb-0">Kotlin</h6>
+                                            <span class="skill-percentage">0%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="skill-description mt-2">
+                                            <small class="text-muted">Android App Development, Coroutines</small>
+                                        </div>
+                                    </div>
+                                    <div class="skill-card mb-4" data-skill="86">
+                                        <div class="skill-header d-flex justify-content-between align-items-center">
+                                            <h6 class="font-weight-bold mb-0">Java</h6>
+                                            <span class="skill-percentage">0%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-info" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="skill-description mt-2">
+                                            <small class="text-muted">Android SDK, OOP Concepts</small>
+                                        </div>
+                                    </div>
+                                    <div class="skill-card mb-4" data-skill="84">
+                                        <div class="skill-header d-flex justify-content-between align-items-center">
+                                            <h6 class="font-weight-bold mb-0">Firebase</h6>
+                                            <span class="skill-percentage">0%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="skill-description mt-2">
+                                            <small class="text-muted">Realtime Database, Authentication</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="skill-card mb-4" data-skill="89">
+                                        <div class="skill-header d-flex justify-content-between align-items-center">
+                                            <h6 class="font-weight-bold mb-0">Android Studio</h6>
+                                            <span class="skill-percentage">0%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="skill-description mt-2">
+                                            <small class="text-muted">IDE, Debugging, Profiling</small>
+                                        </div>
+                                    </div>
+                                    <div class="skill-card mb-4" data-skill="82">
+                                        <div class="skill-header d-flex justify-content-between align-items-center">
+                                            <h6 class="font-weight-bold mb-0">Material Design</h6>
+                                            <span class="skill-percentage">0%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="skill-description mt-2">
+                                            <small class="text-muted">UI/UX Design, Components</small>
+                                        </div>
+                                    </div>
+                                    <div class="skill-card mb-4" data-skill="88">
+                                        <div class="skill-header d-flex justify-content-between align-items-center">
+                                            <h6 class="font-weight-bold mb-0">Room Database</h6>
+                                            <span class="skill-percentage">0%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="skill-description mt-2">
+                                            <small class="text-muted">Local Database, ORM</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skills-category" data-category="ai">
+                            <h4 class="category-title mb-4">
+                                <i class="fas fa-robot me-2"></i>AI Technologies
+                            </h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="skill-card mb-4" data-skill="87">
+                                        <div class="skill-header d-flex justify-content-between align-items-center">
+                                            <h6 class="font-weight-bold mb-0">Python</h6>
+                                            <span class="skill-percentage">0%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="skill-description mt-2">
+                                            <small class="text-muted">Machine Learning, Data Analysis</small>
+                                        </div>
+                                    </div>
+                                    <div class="skill-card mb-4" data-skill="85">
+                                        <div class="skill-header d-flex justify-content-between align-items-center">
+                                            <h6 class="font-weight-bold mb-0">TensorFlow</h6>
+                                            <span class="skill-percentage">0%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="skill-description mt-2">
+                                            <small class="text-muted">Deep Learning, Neural Networks</small>
+                                        </div>
+                                    </div>
+                                    <div class="skill-card mb-4" data-skill="83">
+                                        <div class="skill-header d-flex justify-content-between align-items-center">
+                                            <h6 class="font-weight-bold mb-0">OpenCV</h6>
+                                            <span class="skill-percentage">0%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-info" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="skill-description mt-2">
+                                            <small class="text-muted">Computer Vision, Image Processing</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="skill-card mb-4" data-skill="89">
+                                        <div class="skill-header d-flex justify-content-between align-items-center">
+                                            <h6 class="font-weight-bold mb-0">PyTorch</h6>
+                                            <span class="skill-percentage">0%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="skill-description mt-2">
+                                            <small class="text-muted">Deep Learning Framework</small>
+                                        </div>
+                                    </div>
+                                    <div class="skill-card mb-4" data-skill="86">
+                                        <div class="skill-header d-flex justify-content-between align-items-center">
+                                            <h6 class="font-weight-bold mb-0">NLP</h6>
+                                            <span class="skill-percentage">0%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="skill-description mt-2">
+                                            <small class="text-muted">Natural Language Processing</small>
+                                        </div>
+                                    </div>
+                                    <div class="skill-card mb-4" data-skill="84">
+                                        <div class="skill-header d-flex justify-content-between align-items-center">
+                                            <h6 class="font-weight-bold mb-0">Scikit-learn</h6>
+                                            <span class="skill-percentage">0%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="skill-description mt-2">
+                                            <small class="text-muted">Machine Learning Algorithms</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skills-category" data-category="soft">
+                            <h4 class="category-title mb-4">
+                                <i class="fas fa-users me-2"></i>Soft Skills
+                            </h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="skill-card mb-4" data-skill="95">
+                                        <div class="skill-header d-flex justify-content-between align-items-center">
+                                            <h6 class="font-weight-bold mb-0">Communication</h6>
+                                            <span class="skill-percentage">0%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="skill-description mt-2">
+                                            <small class="text-muted">Effective verbal communication</small>
+                                        </div>
+                                    </div>
+                                    <div class="skill-card mb-4" data-skill="90">
+                                        <div class="skill-header d-flex justify-content-between align-items-center">
+                                            <h6 class="font-weight-bold mb-0">Teamwork</h6>
+                                            <span class="skill-percentage">0%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="skill-description mt-2">
+                                            <small class="text-muted">Collaboration and team coordination</small>
+                                        </div>
+                                    </div>
+                                    <div class="skill-card mb-4" data-skill="88">
+                                        <div class="skill-header d-flex justify-content-between align-items-center">
+                                            <h6 class="font-weight-bold mb-0">Problem Solving</h6>
+                                            <span class="skill-percentage">0%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="skill-description mt-2">
+                                            <small class="text-muted">Analytical thinking and solution finding</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="skill-card mb-4" data-skill="92">
+                                        <div class="skill-header d-flex justify-content-between align-items-center">
+                                            <h6 class="font-weight-bold mb-0">Time Management</h6>
+                                            <span class="skill-percentage">0%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-info" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="skill-description mt-2">
+                                            <small class="text-muted">Efficient task prioritization</small>
+                                        </div>
+                                    </div>
+                                    <div class="skill-card mb-4" data-skill="87">
+                                        <div class="skill-header d-flex justify-content-between align-items-center">
+                                            <h6 class="font-weight-bold mb-0">Adaptability</h6>
+                                            <span class="skill-percentage">0%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="skill-description mt-2">
+                                            <small class="text-muted">Flexibility in changing environments</small>
+                                        </div>
+                                    </div>
+                                    <div class="skill-card mb-4" data-skill="85">
+                                        <div class="skill-header d-flex justify-content-between align-items-center">
+                                            <h6 class="font-weight-bold mb-0">Leadership</h6>
+                                            <span class="skill-percentage">0%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="skill-description mt-2">
+                                            <small class="text-muted">Project management and team guidance</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-navigation mt-4">
+                        <button class="btn btn-primary me-2" id="prevSkill">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <div class="skills-dots">
+                            <span class="dot active" data-category="web"></span>
+                            <span class="dot" data-category="android"></span>
+                            <span class="dot" data-category="ai"></span>
+                            <span class="dot" data-category="soft"></span>
+                        </div>
+                        <button class="btn btn-primary ms-2" id="nextSkill">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <ul class="nav nav-pills rounded border border-2 border-primary mb-5">
+                        <li class="nav-item w-50">
+                            <button class="nav-link w-100 py-3 fs-5 active" data-bs-toggle="pill" href="#tab-1">
+                                <i class="fas fa-briefcase me-2"></i>Experience
+                            </button>
+                        </li>
+                        <li class="nav-item w-50">
+                            <button class="nav-link w-100 py-3 fs-5" data-bs-toggle="pill" href="#tab-2">
+                                <i class="fas fa-graduation-cap me-2"></i>Education
+                            </button>
+                        </li>
+                    </ul>
+
+
+                    <div class="tab-content">
+                        <div id="tab-1" class="tab-pane fade show p-0 active">
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-content">
+                                        <div class="timeline-date">May 2024 - July 2024</div>
+                                        <h5>Apprenticeship Game Developer</h5>
+                                        <h6 class="text-primary">Chipeschool</h6>
+                                        <p>Contributed to the development of interactive game features during a 3-month apprenticeship program.</p>
+                                    </div>
+                                </div>
+
+
+                                            <div class="timeline-item">
+                                                <div class="timeline-content">
+                                                    <div class="timeline-date">August 2024 - Present</div>
+                                                    <h5>AI Trainer</h5>
+                                                    <h6 class="text-primary">Outlier</h6>
+                                                    <p>Training and fine-tuning AI models, working with LLM applications, and contributing to AI development projects.</p>
+                                                </div>
+                                            </div>
+
+
+                            </div>
+
+
+                        </div>
+                        <div id="tab-2" class="tab-pane fade show p-0">
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-content">
+                                    <div class="timeline-date">2022 - Present</div>
+                                    <h5>B.tech in Computer Science and Engineering</h5>
+                                    <h6 class="text-primary">Lovely Professional University,Phagwara</h6>
+                                    <p>Pursuing undergraduate studies with a focus on software development and interactive media.</p>
+                                </div>
+
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-content">
+                                        <div class="timeline-date">2020 - 2022</div>
+                                        <h5>Intermediate</h5>
+                                        <h6 class="text-primary">Bongaigaon Higher Secondary Railway School, Bongaigaon</h6>
+                                        <p>Completed Higher Secondary education with a focus on Science stream.</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2008 - 2019</div>
+                                    <h5>Matriculation</h5>
+                                    <h6 class="text-primary">John David William English School, Tukrajhar</h6>
+                                    <p>Completed foundational education with emphasis on academic and personal development.</p>
+                                </div>
+                            </div>
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Expertise End -->
+
+
+
+
+    <!-- Service Start -->
+    <div class="container-fluid bg-light my-5 py-6" id="service">
+        <div class="container">
+            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-6">
+                    <h1 class="display-5 mb-0">My Services</h1>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <a class="btn btn-primary py-3 px-5" href="index.html">Hire Me</a>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
+                        <div class="bg-icon flex-shrink-0 mb-3">
+                            <i class="fa fa-crop-alt fa-2x text-dark"></i>
+                        </div>
+                        <div class="ms-sm-4">
+                        <h4 class="mb-3">Android Development</h4>
+                        <span>I design and develop Android apps using modern tools like Kotlin, Jetpack, and Firebase. Whether it's a business solution, streaming platform, or booking app, I ensure smooth performance and beautiful UI.</span>
+</div>
+
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
+                        <div class="bg-icon flex-shrink-0 mb-3">
+                            <i class="fa fa-code-branch fa-2x text-dark"></i>
+                        </div>
+                       <div class="ms-sm-4">
+                        <h4 class="mb-3">AI Developer</h4>
+                        <span>Design and implement intelligent solutions using machine learning, deep learning, and natural language processing. From chatbots to predictive analytics, I develop AI systems tailored to your business needs.</span>
+</div>
+
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
+                        <div class="bg-icon flex-shrink-0 mb-3">
+                            <i class="fa fa-code fa-2x text-dark"></i>
+                        </div>
+                        <div class="ms-sm-4">
+                            <h4 class="mb-3">Web Designer</h4>
+                            <span>I create modern, responsive websites using HTML5, CSS3, and JavaScript. Specializing in user-friendly interfaces, clean code, and optimal performance. From landing pages to complex web applications, I deliver solutions that engage users and drive results.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
+                        <div class="bg-icon flex-shrink-0 mb-3">
+                            <i class="fas fa-gamepad fa-2x text-dark"></i>
+                        </div>
+                        <div class="ms-sm-4">
+                            <h4 class="mb-3">Game Development</h4>
+                            <span>I develop engaging and interactive games using Unity and C#. Specializing in 2D/3D game development, character animation, and game mechanics. From mobile games to PC applications, I create immersive gaming experiences with smooth gameplay and stunning visuals.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+<!-- Projects Start -->
+<div class="container-xxl py-6 pt-5" id="project">
+    <div class="container">
+        <div class="row g-5 mb-5 align-items-center wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-6">
+                <h1 class="display-5 mb-0">My Projects</h1>
+            </div>
+            <div class="col-lg-6 text-lg-end">
+                <ul class="list-inline mx-n3 mb-0" id="portfolio-flters">
+                    <li class="mx-3 active" data-filter="*">All Projects</li>
+                    <li class="mx-3" data-filter=".android">Android</li>
+                    <li class="mx-3" data-filter=".web">Web</li>
+                    <li class="mx-3" data-filter=".ai">AI & Game Development</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.1s">
+            <!-- Android Project -->
+            <div class="col-lg-4 col-md-6 portfolio-item android">
+                <div class="portfolio-img rounded overflow-hidden">
+                    <img class="img-fluid" src="img/0.jpeg" alt="WeatherWise App">
+                    <div class="portfolio-btn">
+                        <div class="portfolio-content">
+                            <h4 class="text-white mb-2">Krisimitra</h4>
+                            <p class="text-white-50 mb-3">Real-time soil indetification online </p>
+                            <div class="tech-stack">
+                                <span class="badge bg-primary me-2">Kotlin</span>
+                                <span class="badge bg-primary me-2">MVVM</span>
+                                <span class="badge bg-primary">Retrofit</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-actions">
+                            <!-- Hidden screenshots for the gallery -->
+                            <a class="d-none" href="img/3.jpeg" data-lightbox="weatherwise" data-title="WeatherWise - Home Screen"></a>
+                            <a class="d-none" href="img/7.jpeg" data-lightbox="weatherwise" data-title="WeatherWise - Forecast Screen"></a>
+                            <a class="d-none" href="img/6.jpeg" data-lightbox="weatherwise" data-title="WeatherWise - Location Search"></a>
+                            
+                            <!-- Single eye icon to trigger the gallery -->
+                            <a class="btn btn-lg-square btn-outline-light border-2 mx-1" href="img/4.jpeg" data-lightbox="weatherwise" data-title="WeatherWise - Home Screen">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                            <a class="btn btn-lg-square btn-outline-light border-2 mx-1" href="#">
+                                <i class="fa fa-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Project -->
+            <div class="col-lg-4 col-md-6 portfolio-item ai">
+                <div class="portfolio-img rounded overflow-hidden">
+                    <img class="img-fluid" src="img/Project3.png" alt="Face Detection System">
+                    <div class="portfolio-btn">
+                        <div class="portfolio-content">
+                            <h4 class="text-white mb-2">Liveness Face Detection</h4>
+                            <p class="text-white-50 mb-3">AI-powered face verification system</p>
+                            <div class="tech-stack">
+                                <span class="badge bg-primary me-2">OpenCV</span>
+                                <span class="badge bg-primary me-2">TensorFlow</span>
+                                <span class="badge bg-primary">Python</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-actions">
+                            <!-- Hidden screenshots for the gallery -->
+                            <a class="d-none" href="img/sibiston1.png" data-lightbox="face-detection" data-title="Face Detection - Main Interface"></a>
+                            <a class="d-none" href="img/Project32.png" data-lightbox="face-detection" data-title="Face Detection - Verification Process"></a>
+                            
+                            <!-- Single eye icon to trigger the gallery -->
+                            <a class="btn btn-lg-square btn-outline-light border-2 mx-1" href="img/sibiston2.png" data-lightbox="face-detection" data-title="Face Detection - Main Interface">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                            <a class="btn btn-lg-square btn-outline-light border-2 mx-1" href="#">
+                                <i class="fa fa-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Project -->
+            <div class="col-lg-4 col-md-6 portfolio-item web">
+                <div class="portfolio-img rounded overflow-hidden">
+                    <img class="img-fluid" src="img/project-2.png" alt="Portfolio Website">
+                    <div class="portfolio-btn">
+                        <div class="portfolio-content">
+                            <h4 class="text-white mb-2">Online Chat Application</h4>
+                            <p class="text-white-50 mb-3">Modern responsive web design</p>
+                            <div class="tech-stack">
+                                <span class="badge bg-primary me-2">HTML5</span>
+                                <span class="badge bg-primary me-2">CSS3</span>
+                                <span class="badge bg-primary">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-actions">
+                            <!-- Hidden screenshots for the gallery -->
+                            <a class="d-none" href="img/c1.png" data-lightbox="portfolio" data-title="Portfolio - Home Page"></a>
+                            <a class="d-none" href="img/c2.png" data-lightbox="portfolio" data-title="Portfolio - Projects Section"></a>
+                            <a class="d-none" href="img/c3.png" data-lightbox="portfolio" data-title="Portfolio - Contact Section"></a>
+                            
+                            <!-- Single eye icon to trigger the gallery -->
+                            <a class="btn btn-lg-square btn-outline-light border-2 mx-1" href="img/c4.png" data-lightbox="portfolio" data-title="Portfolio - Home Page">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                            <a class="btn btn-lg-square btn-outline-light border-2 mx-1" href="#">
+                                <i class="fa fa-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+             <div class="col-lg-4 col-md-6 portfolio-item web">
+                <div class="portfolio-img rounded overflow-hidden">
+                    <img class="img-fluid" src="img/m3.png" alt="Portfolio Website">
+                    <div class="portfolio-btn">
+                        <div class="portfolio-content">
+                            <h4 class="text-white mb-2">Online Movie Booking System</h4>
+                            <p class="text-white-50 mb-3">Modern responsive web design</p>
+                            <div class="tech-stack">
+                                <span class="badge bg-primary me-2">HTML5</span>
+                                <span class="badge bg-primary me-2">CSS3</span>
+                                <span class="badge bg-primary">JavaScript</span>
+                                <span class="badge bg-primary">PHP</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-actions">
+                            <!-- Hidden screenshots for the gallery -->
+                            <a class="d-none" href="img/m10.png" data-lightbox="portfolio" data-title="Portfolio - Home Page"></a>
+                            <a class="d-none" href="img/m11.png" data-lightbox="portfolio" data-title="Portfolio - Projects Section"></a>
+                            <a class="d-none" href="img/m3.png" data-lightbox="portfolio" data-title="Portfolio - Contact Section"></a>
+                            
+                            <!-- Single eye icon to trigger the gallery -->
+                            <a class="btn btn-lg-square btn-outline-light border-2 mx-1" href="img/m4.png" data-lightbox="portfolio" data-title="Portfolio - Home Page">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                            <a class="btn btn-lg-square btn-outline-light border-2 mx-1" href="#">
+                                <i class="fa fa-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+             <div class="col-lg-4 col-md-6 portfolio-item ai">
+                <div class="portfolio-img rounded overflow-hidden">
+                    <img class="img-fluid" src="img/b1.jpg" alt="Face Detection System">
+                    <div class="portfolio-btn">
+                        <div class="portfolio-content">
+                            <h4 class="text-white mb-2">Bodo Ai</h4>
+                            <p class="text-white-50 mb-3">Bodo Gpt with custom Language</p>
+                            <div class="tech-stack">
+                                <span class="badge bg-primary me-2">OpenCV</span>
+                                <span class="badge bg-primary me-2">TensorFlow</span>
+                                <span class="badge bg-primary">Python</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-actions">
+                            <!-- Hidden screenshots for the gallery -->
+                            <a class="d-none" href="img/b2.jpg" data-lightbox="face-detection" data-title="Face Detection - Main Interface"></a>
+                            <a class="d-none" href="img/b3.jpg" data-lightbox="face-detection" data-title="Face Detection - Verification Process"></a>
+                            
+                            <!-- Single eye icon to trigger the gallery -->
+                            <a class="btn btn-lg-square btn-outline-light border-2 mx-1" href="img/b4.jpg" data-lightbox="face-detection" data-title="Face Detection - Main Interface">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                            <a class="btn btn-lg-square btn-outline-light border-2 mx-1" href="#">
+                                <i class="fa fa-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+                    <div class="col-lg-4 col-md-6 portfolio-item ai">
+                <div class="portfolio-img rounded overflow-hidden">
+                    <img class="img-fluid" src="img/g1.png" alt="Face Detection System">
+                    <div class="portfolio-btn">
+                        <div class="portfolio-content">
+                            <h4 class="text-white mb-2">Infinite Runner</h4>
+                            <p class="text-white-50 mb-3">Game Development using Unity</p>
+                            <div class="tech-stack">
+                                <span class="badge bg-primary me-2">C#</span>
+                                <span class="badge bg-primary me-2">Unity</span>
+                                <span class="badge bg-primary">2D,3D</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-actions">
+                            <!-- Hidden screenshots for the gallery -->
+                            <a class="d-none" href="img/g2.png" data-lightbox="face-detection" data-title="Face Detection - Main Interface"></a>
+                            <a class="d-none" href="img/g3.png" data-lightbox="face-detection" data-title="Face Detection - Verification Process"></a>
+                            
+                            <!-- Single eye icon to trigger the gallery -->
+                            <a class="btn btn-lg-square btn-outline-light border-2 mx-1" href="img/g4.png" data-lightbox="face-detection" data-title="Face Detection - Main Interface">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                            <a class="btn btn-lg-square btn-outline-light border-2 mx-1" href="#">
+                                <i class="fa fa-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+<!-- Projects End -->
+
+<style>
+    .portfolio-img {
+        position: relative;
+        overflow: hidden;
+        height: 300px;
+    }
+
+    .portfolio-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .portfolio-btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: all 0.3s ease;
+        padding: 20px;
+    }
+
+    .portfolio-item:hover .portfolio-btn {
+        opacity: 1;
+    }
+
+    .portfolio-item:hover .portfolio-img img {
+        transform: scale(1.1);
+    }
+
+    .portfolio-content {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .portfolio-content h4 {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .portfolio-content p {
+        font-size: 0.9rem;
+    }
+
+    .tech-stack {
+        margin: 10px 0;
+    }
+
+    .portfolio-actions {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .portfolio-actions .btn {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+    }
+
+    .portfolio-actions .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    }
+
+    @media (max-width: 991px) {
+        .portfolio-img {
+            height: 250px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .portfolio-img {
+            height: 200px;
+        }
+        
+        .portfolio-content h4 {
+            font-size: 1.3rem;
+        }
+        
+        .portfolio-content p {
+            font-size: 0.8rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .portfolio-img {
+            height: 180px;
+        }
+        
+        .portfolio-content h4 {
+            font-size: 1.2rem;
+        }
+        
+        .tech-stack .badge {
+            font-size: 0.7rem;
+            padding: 5px 10px;
+        }
+    }
+</style>
+
+
+    <!-- Achievements & Certifications Start -->
+    <div class="container-xxl py-6 pt-5" id="achievements">
+        <div class="container">
+            <div class="row g-5 mb-5 align-items-center wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-6">
+                    <h1 class="display-5 mb-0">Achievements & Certifications</h1>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <ul class="list-inline mx-n3 mb-0" id="achievement-filters">
+                        <li class="mx-3 active" data-filter="*">All</li>
+                        <li class="mx-3" data-filter=".achievement">Achievements</li>
+                        <li class="mx-3" data-filter=".certification">Certifications</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="row g-4 achievement-container wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-4 col-md-6 achievement-item achievement">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-trophy fa-3x"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h4>Capture The Flag TechnOcean 2024(LPU)</h4>
+                            <p>Winner - Hackathon Contest</p>
+                            <div class="achievement-date">
+                                <i class="far fa-calendar-alt"></i> 2024
+                            </div>
+                            <div class="achievement-links">
+                                <a href="img/hackathon-cert.png" data-lightbox="certificates" class="btn btn-sm btn-primary">View Certificate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 achievement-item certification">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-certificate fa-3x"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h4>Web Development Certification</h4>
+                            <p>Server side JavaScript with Node.js</p>
+                            <div class="achievement-date">
+                                <i class="far fa-calendar-alt"></i> 2024
+                            </div>
+                            <div class="achievement-links">
+                                <a href="img/Niit.png" data-lightbox="certificates" class="btn btn-sm btn-primary">View Certificate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 achievement-item achievement">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-medal fa-3x"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h4>Game Development Certification</h4>
+                            <p>Using Unity C# 2D,3D</p>
+                            <div class="achievement-date">
+                                <i class="far fa-calendar-alt"></i> 2024
+                            </div>
+                            <div class="achievement-links">
+                                <a href="img/ci.png" data-lightbox="certificates" class="btn btn-sm btn-primary">View Certificate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 achievement-item certification">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-certificate fa-3x"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h4>AI & Machine Learning</h4>
+                            <p>Advanced AI Development Course</p>
+                            <div class="achievement-date">
+                                <i class="far fa-calendar-alt"></i> 2024
+                            </div>
+                            <div class="achievement-links">
+                                <a href="img/Ai.png" data-lightbox="certificates" class="btn btn-sm btn-primary">View Certificate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 achievement-item achievement">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-award fa-3x"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h4>CyberStrom CTF Hackathon</h4>
+                            <p>Certificate of Participation</p>
+                            <div class="achievement-date">
+                                <i class="far fa-calendar-alt"></i> 2023
+                            </div>
+                            <div class="achievement-links">
+                                <a href="img/Mumbai.png
+                                " data-lightbox="certificates" class="btn btn-sm btn-primary">View Certificate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 achievement-item certification">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-certificate fa-3x"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h4>Web Development</h4>
+                            <p>HTML, CSS, and Javascript for Web Developers</p>
+                            <div class="achievement-date">
+                                <i class="far fa-calendar-alt"></i> 2023
+                            </div>
+                            <div class="achievement-links">
+                                <a href="img/web1.png" data-lightbox="certificates" class="btn btn-sm btn-primary">View Certificate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Achievements & Certifications End -->
+
+    <style>
+        .achievement-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .achievement-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .achievement-content {
+            position: relative;
+        }
+
+        .achievement-content h4 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .achievement-content p {
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
+
+        .achievement-date {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .achievement-date i {
+            margin-right: 5px;
+            color: #0d6efd;
+        }
+
+        .achievement-links .btn {
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .achievement-links .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+        }
+
+        #achievement-filters {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+        }
+
+        #achievement-filters li {
+            cursor: pointer;
+            padding: 8px 20px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        #achievement-filters li.active {
+            background: #0d6efd;
+            color: #fff;
+        }
+
+        #achievement-filters li:hover:not(.active) {
+            background: #e9ecef;
+        }
+
+        .achievement-item {
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .achievement-card {
+                padding: 20px;
+            }
+            
+            #achievement-filters {
+                justify-content: center;
+                margin-top: 20px;
+            }
+        }
+
+        /* Lightbox customization */
+        .lb-data .lb-caption {
+            font-size: 16px;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .lb-data .lb-details {
+            width: 100%;
+            text-align: center;
+        }
+
+        .lb-data .lb-close {
+            display: block;
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        .skill-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-header {
+            margin-bottom: 10px;
+        }
+
+        .skill-percentage {
+            font-weight: bold;
+            color: #0d6efd;
+        }
+
+        .progress {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #f0f0f0;
+        }
+
+        .progress-bar {
+            border-radius: 4px;
+            transition: width 1.5s ease-in-out;
+        }
+
+        .experience-card, .education-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .experience-card:hover, .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-pills .nav-link {
+            transition: all 0.3s ease;
+        }
+
+        .nav-pills .nav-link.active {
+            background: linear-gradient(45deg, #0d6efd, #0b5ed7);
+            color: #fff;
+        }
+
+        .nav-pills .nav-link:not(.active) {
+            background: #f8f9fa;
+            color: #6c757d;
+        }
+
+        .nav-pills .nav-link:hover:not(.active) {
+            background: #e9ecef;
+        }
+
+        /* Timeline Styles */
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #0d6efd;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #fff;
+            border: 3px solid #0d6efd;
+            z-index: 1;
+        }
+
+        .timeline-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateX(10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-bottom: 5px;
+        }
+
+        .timeline-content h5 {
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        .timeline-content h6 {
+            margin-bottom: 10px;
+        }
+
+        .timeline-content p {
+            margin-bottom: 0;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 15px;
+            }
+
+            .timeline-item {
+                padding-left: 40px;
+            }
+
+            .timeline-item::before {
+                left: 7px;
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        .skills-slider {
+            position: relative;
+            overflow: hidden;
+            min-height: 400px;
+        }
+
+        .skills-category {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .skills-category.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .skills-category.prev {
+            transform: translateX(-100%);
+        }
+
+        .category-title {
+            color: #0d6efd;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .skills-navigation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .skills-dots {
+            display: flex;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #dee2e6;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #0d6efd;
+            transform: scale(1.2);
+        }
+
+       
+
+        @media (max-width: 768px) {
+            .skills-navigation {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+
+
+    <!-- Blog and youtube Channel Start -->
+    
+    <!-- Blog and youtube Channel -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid bg-light py-5 my-5" id="testimonial">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Testimonial</h1>
+            <div class="row justify-content-center">
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="testimonial-left h-100">
+                        <img class="img-fluid wow fadeIn" data-wow-delay="0.1s" src="img/testimonial-1.jpg" alt="">
+                        <img class="img-fluid wow fadeIn" data-wow-delay="0.3s" src="img/testimonial-2.jpg" alt="">
+                        <img class="img-fluid wow fadeIn" data-wow-delay="0.5s" src="img/testimonial-3.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="owl-carousel testimonial-carousel">
+                        <div class="testimonial-item text-center">
+                            <div class="position-relative mb-5">
+                                <img class="img-fluid rounded-circle border border-secondary p-2 mx-auto"
+                                    src="img/tes.jpg" alt="">
+                                <div class="testimonial-icon">
+                                    <i class="fa fa-quote-left text-primary"></i>
+                                </div>
+                            </div>
+                            <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7286353466308882433?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7286353466308882433%2C7316266206087335937%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287316266206087335937%2Curn%3Ali%3AugcPost%3A7286353466308882433%29" target="_blank" style="text-decoration: none; color: inherit;">
+                                <p class="fs-5 fst-italic">Hi Sibiston, would be interested in knowing more about your project. Please feel free to connect if you'd be interested in turn</p>
+                            </a>
+                            
+                            <hr class="w-25 mx-auto">
+                            <h5> Ramit Gupta</h5>
+                            <span>Consultent in Strategy & Middle East</span>
+                        </div>
+                        
+                        <div class="testimonial-item text-center">
+                            <div class="position-relative mb-5">
+                                <img class="img-fluid rounded-circle border border-secondary p-2 mx-auto"
+                                    src="img/ayus.jpg" alt="">
+                                <div class="testimonial-icon">
+                                    <i class="fa fa-quote-left text-primary"></i>
+                                </div>
+                            </div>
+                            <a href="https://www.linkedin.com/posts/ayush---kumar_androiddevelopment-kotlin-flutter-activity-7287894843240914944-fsG5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD5AXR4Bbo6fDbrjImVuADwY4KCCTDDMIT8" target="_blank" style="text-decoration: none; color: inherit;">
+                            <p class="fs-5 fst-italic">Keep Learning Brother😊</p>
+                        </a>
+                            <hr class="w-25 mx-auto">
+                            <h5>Ayush Kumar</h5>
+                            <span>SDE Intern </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="testimonial-right h-100">
+                        <img class="img-fluid wow fadeIn" data-wow-delay="0.1s" src="img/testimonial-1.jpg" alt="">
+                        <img class="img-fluid wow fadeIn" data-wow-delay="0.3s" src="img/testimonial-2.jpg" alt="">
+                        <img class="img-fluid wow fadeIn" data-wow-delay="0.5s" src="img/testimonial-3.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+    <!-- Contact Start -->
+    <div class="container-xxl pb-5" id="contact">
+        <div class="container py-5">
+            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-6">
+                    <h1 class="display-5 mb-0">Let's Work Together</h1>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <a class="btn btn-primary py-3 px-5" href="index.html">Say Hello</a>
+                </div>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="mb-2">My Office:</p>
+                    <h3 class="fw-bold">Tukrajhar, Assam 783394</h3>
+                    <hr class="w-100">
+                    <p class="mb-2">Call me:</p>
+                    <h3 class="fw-bold">+91 7099739412</h3>
+                    <hr class="w-100">
+                    <p class="mb-2">Mail me:</p>
+                    <h3 class="fw-bold">sibistonb@gmail.com</h3>
+                    <hr class="w-100">
+                    <p class="mb-2">Follow me:</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square btn-primary me-2" href="index.html"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-primary me-2" href="index.html"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-primary me-2" href="index.html"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-primary me-2" href="index.html"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div id="form-messages" class="alert d-none"></div>
+                    <form id="contact-form">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                                    <label for="name">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                                    <label for="subject">Subject</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message" name="message" style="height: 100px" required></textarea>
+                                    <label for="message">Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary py-3 px-5" type="submit">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+ <!-- Map Start -->
+<div class="container-xxl pt-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container-xxl pt-5 px-0">
+        <div class="bg-dark">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3410.7482400044983!2d75.70229287564165!3d31.255392074336367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a5f5e9c489cf3%3A0x4049a5409d53c300!2sLovely%20Professional%20University!5e0!3m2!1sen!2sin!4v1745525887061!5m2!1sen!2sin"
+                width="100%"
+                height="450"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</div>
+<!-- Map End -->
+
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid bg-dark text-white py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom text-secondary" href="index.html#">Sibiston Portfolio</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <!--/*** This template is free as long as you keep the footer author's credit link/attribution link/backlink. If you'd like to use the template without the footer author's credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        Designed By <a class="border-bottom text-secondary" href="#">Sibiston Basumatary</a>
+                       <!--/***  <br>Distributed By: <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a> ***/-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="index.html#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/typed/typed.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const form = e.target;
+        const formData = new FormData(form);
+        const messagesDiv = document.getElementById('form-messages');
+        
+        // Show loading state
+        messagesDiv.className = 'alert alert-info';
+        messagesDiv.textContent = 'Sending message...';
+        messagesDiv.classList.remove('d-none');
+        
+        fetch('send_email.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                messagesDiv.className = 'alert alert-success';
+                form.reset();
+            } else {
+                messagesDiv.className = 'alert alert-danger';
+            }
+            messagesDiv.textContent = data.message;
+        })
+        .catch(error => {
+            messagesDiv.className = 'alert alert-danger';
+            messagesDiv.textContent = 'An error occurred. Please try again later.';
+        });
+    });
+    </script>
+
+    <script>
+        // Skills slider functionality
+        const categories = document.querySelectorAll('.skills-category');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.getElementById('prevSkill');
+        const nextBtn = document.getElementById('nextSkill');
+        let currentIndex = 0;
+
+        function updateSlider() {
+            categories.forEach((category, index) => {
+                if (index === currentIndex) {
+                    category.classList.add('active');
+                    category.classList.remove('prev');
+                } else if (index < currentIndex) {
+                    category.classList.add('prev');
+                    category.classList.remove('active');
+                } else {
+                    category.classList.remove('active', 'prev');
+                }
+            });
+
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        // Animate skill bars on scroll
+        function animateSkills() {
+            const skillCards = document.querySelectorAll('.skill-card');
+            skillCards.forEach(card => {
+                const percentage = card.getAttribute('data-skill');
+                const progressBar = card.querySelector('.progress-bar');
+                const percentageSpan = card.querySelector('.skill-percentage');
+                
+                let current = 0;
+                const interval = setInterval(() => {
+                    if (current >= percentage) {
+                        clearInterval(interval);
+                    } else {
+                        current++;
+                        progressBar.style.width = current + '%';
+                        percentageSpan.textContent = current + '%';
+                    }
+                }, 20);
+            });
+        }
+
+        // Intersection Observer for skill animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSkills();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const skillSection = document.querySelector('#skill');
+        if (skillSection) {
+            observer.observe(skillSection);
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + categories.length) % categories.length;
+            updateSlider();
+            animateSkills();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % categories.length;
+            updateSlider();
+            animateSkills();
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                updateSlider();
+                animateSkills();
+            });
+        });
+
+        // Initialize slider
+        updateSlider();
+    </script>
+
+    <script>
+    // Achievement filtering functionality
+    $(document).ready(function() {
+        // Initialize isotope
+        var $achievementContainer = $('.achievement-container').isotope({
+            itemSelector: '.achievement-item',
+            layoutMode: 'fitRows'
+        });
+
+        // Filter items on button click
+        $('#achievement-filters').on('click', 'li', function() {
+            var filterValue = $(this).attr('data-filter');
+            
+            // Update active class
+            $('#achievement-filters li').removeClass('active');
+            $(this).addClass('active');
+            
+            // Filter items
+            if (filterValue === '*') {
+                $achievementContainer.isotope({ filter: '*' });
+            } else {
+                $achievementContainer.isotope({ filter: filterValue });
+            }
+        });
+    });
+    </script>
+</body>
+
+</html>
