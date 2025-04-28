@@ -1648,42 +1648,178 @@
     <div class="container">
         <div class="row g-5 mb-5 align-items-center wow fadeInUp" data-wow-delay="0.1s">
             <div class="col-lg-6">
-                <h1 class="display-5 mb-0">YouTube</h1>
+                <h1 class="display-5 mb-0">YouTube & Content</h1>
+                <p class="text-muted mt-2">Check out my latest videos and content</p>
             </div>
             <div class="col-lg-6 text-lg-end">
                 <a class="btn btn-primary py-3 px-5" href="https://www.youtube.com/@sibistonbasumatary4843" target="_blank">
-                    Visit My YouTube
+                    <i class="fab fa-youtube me-2"></i>Visit My YouTube
                 </a>
             </div>
         </div>
         <div class="row g-4">
             <div class="col-lg-6">
-                <div class="card h-100 shadow-sm border-0">
-                    <img src="img/blog1.jpg" class="card-img-top" alt="">
+                <div class="card h-100 shadow-sm border-0 blog-card">
+                    <div class="card-img-container">
+                        <img src="img/blog1.jpg" class="card-img-top" alt="Vlog Content">
+                        <div class="card-overlay">
+                            <a href="https://yourblog.com/post1" target="_blank" class="btn btn-light btn-sm">
+                                <i class="fas fa-play me-2"></i>Watch Now
+                            </a>
+                        </div>
+                    </div>
                     <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="badge bg-primary me-2">Vlog</span>
+                            <small class="text-muted"><i class="far fa-calendar-alt me-1"></i>Latest</small>
+                        </div>
                         <h4 class="card-title">I Make Vlog Content</h4>
                         <p class="card-text">I create entertaining vlog content, capturing fun moments, adventures, and experiences to share with you. Join me on my journey and enjoy the vibes!</p>
-                        <a href="https://yourblog.com/post1" target="_blank" class="btn btn-outline-primary btn-sm">Watch My Vlogs</a>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="https://yourblog.com/post1" target="_blank" class="btn btn-outline-primary btn-sm">
+                                <i class="fas fa-play-circle me-2"></i>Watch My Vlogs
+                            </a>
+                            <div class="social-stats">
+                                <span class="me-3"><i class="far fa-eye me-1"></i>1.2K</span>
+                                <span><i class="far fa-heart me-1"></i>256</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <!-- Nesoj Sports Video -->
             <div class="col-lg-6">
-                <div class="card h-100 shadow-sm border-0">
-                    <div class="ratio ratio-16x9">
-                        <iframe src="https://www.youtube.com/embed/AVXYSL4DRko?si=8o3fEbjDI-nX0-a3" title="Nesoj Sports Vlog" allowfullscreen></iframe>
+                <div class="card h-100 shadow-sm border-0 blog-card">
+                    <div class="video-container">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/AVXYSL4DRko?si=8o3fEbjDI-nX0-a3" title="Nesoj Sports Vlog" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-overlay">
+                            <a href="https://www.youtube.com/@sibistonbasumatary4843" target="_blank" class="btn btn-light btn-sm">
+                                <i class="fas fa-play me-2"></i>Watch More
+                            </a>
+                        </div>
                     </div>
                     <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="badge bg-danger me-2">Sports</span>
+                            <small class="text-muted"><i class="far fa-calendar-alt me-1"></i>Latest</small>
+                        </div>
                         <h4 class="card-title">Nesoj Sports - My New Vlog!</h4>
                         <p class="card-text">Come along with me as I explore the exciting world of Nesoj Sports! Fun moments, action, and entertainment guaranteed.</p>
-                        <a href="https://www.youtube.com/@sibistonbasumatary4843" target="_blank" class="btn btn-outline-danger btn-sm">Watch More</a>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="https://www.youtube.com/@sibistonbasumatary4843" target="_blank" class="btn btn-outline-danger btn-sm">
+                                <i class="fab fa-youtube me-2"></i>Watch More
+                            </a>
+                            <div class="social-stats">
+                                <span class="me-3"><i class="far fa-eye me-1"></i>2.5K</span>
+                                <span><i class="far fa-heart me-1"></i>512</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Add more blog posts or videos as needed -->
     </div>
 </div>
+
+<style>
+    .blog-card {
+        transition: all 0.3s ease;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-img-container {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .card-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .card-img-container:hover .card-overlay {
+        opacity: 1;
+    }
+
+    .video-container {
+        position: relative;
+    }
+
+    .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .video-container:hover .video-overlay {
+        opacity: 1;
+    }
+
+    .social-stats {
+        font-size: 0.9rem;
+        color: #6c757d;
+    }
+
+    .badge {
+        padding: 0.5em 1em;
+        font-weight: 500;
+    }
+
+    .card-title {
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    .card-text {
+        color: #6c757d;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn-outline-primary, .btn-outline-danger {
+        border-width: 2px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .btn-outline-primary:hover, .btn-outline-danger:hover {
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+        .social-stats {
+            display: none;
+        }
+        
+        .card-title {
+            font-size: 1.2rem;
+        }
+    }
+</style>
 <!-- Blog & YouTube Section End -->
 
     
@@ -1706,8 +1842,8 @@
                     <div class="owl-carousel testimonial-carousel">
                         <div class="testimonial-item text-center">
                             <div class="position-relative mb-5">
-                                <img class="img-fluid rounded-circle border border-secondary p-2 mx-auto"
-                                    src="img/tes.jpg" alt="">
+                               <img class="img-fluid rounded-circle border border-secondary p-2 mx-auto"
+                                    src="img/1111.jpg" alt="">
                                 <div class="testimonial-icon">
                                     <i class="fa fa-quote-left text-primary"></i>
                                 </div>
